@@ -1,16 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 use App\Buku;
 use App\Petualang;
 
@@ -41,7 +30,7 @@ Route::get('keempat', function () {
 });
 
 Route::get('kelima', function () {
-    return ('Dll'); 
+    return ('Dll');
 });
 
 Route::get('variable', function () {
@@ -84,5 +73,34 @@ Route::get('siswa/{nama}/{nilai?}', function ($nama,$nilai = 'Belum Mempunyai Ni
     else {
         $grade = 'Tidak Mempunyai Nilai !!';
     }
-    return ' Hai : '.$nama.'<br>' .$nilai. '<br>' .$grade;  
+    return ' Hai : '.$nama.'<br>' .$nilai. '<br>' .$grade;
 });
+
+Route::get('contoh', 'ContohController@latihan');
+
+Route::get('profil', 'ContohController@latihan2');
+
+Route::get('profil2', 'ContohController@latihan3');
+
+Route::get('profil3', 'ContohController@latihan4');
+
+Route::get('biodata', 'BiodataController@Biodata');
+
+Route::get('menu/{mkn}', 'ContohController@menu');
+
+Route::get('menu2/{makan?}/{makan2?}/{harga}', 'ContohController@menu2');
+
+Route::get('hitungbuku', 'BukuController@hitung');
+
+Route::get('display', 'BukuController@display');
+
+Route::get('show', 'BukuController@show');
+
+//CRUD
+Route::get('get-buku', 'BukuController@index');
+Route::get('create-buku', 'BukuController@create');
+Route::get('get-buku/{id}', 'BukuController@show');
+Route::get('createdata', 'BukuController@buatdata');
+Route::get('update/{id}', 'BukuController@update');
+Route::get('delete/{id}', 'BukuController@delete');
+
